@@ -55,7 +55,7 @@ Os nomes de autores e o conteúdo de cada trabalho foram preservados conforme se
 ## Checklist da padronização
 
 - [x] Versões Markdown dos cinco trabalhos existentes preparadas, com tabelas e imagens preservadas.
-- [ ] Retirar os cinco `.docx` da árvore atual após autorização do responsável. Os originais estão preservados; não houve exclusão nem reescrita do histórico.
+- [x] Cinco `.docx` retirados da árvore atual com autorização do responsável em 27/09/2026. Conteúdo preservado em Markdown, código e imagens; originais recuperáveis no histórico Git, sem reescrita do histórico.
 - [x] Imagens extraídas nas pastas apropriadas e referenciadas por links relativos.
 - [x] Labels de disciplina e tipo padronizadas conforme o guia.
 - [ ] Entregas acadêmicas pendentes produzidas e validadas.
