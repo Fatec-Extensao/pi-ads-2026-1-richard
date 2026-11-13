@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "scripts": {
+    "links": "node check-links.cjs",
+    "db": "node check-db.cjs",
+    "ui": "node check-ui.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1",
+    "sql.js": "1.13.0"
+  }
+}

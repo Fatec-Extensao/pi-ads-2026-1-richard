@@ -1,64 +1,52 @@
-# pi-ads-2026-2-richard
+# Sistema Web para Gestão de Pesquisas por Questionários
 
-Sistema Web para Gestão de Pesquisas por Questionários — Projeto Integrador, ADS, Fatec Lins.
+**Publicação: preparada, ainda sem URL pública validada.** [Instruções de publicação](2026-2/desenvolvimento-web/publicacao.md) · [Abrir o protótipo](2026-2/desenvolvimento-web/src/index.html) · [Apresentação](2026-2/evidencias/apresentacao.html)
 
-**Aplicação publicada: pendente.** Não foi encontrado código da aplicação web nem endereço de publicação no repositório. A publicação e a inclusão do link funcional são acompanhadas na [Issue #9](../../issues/9).
+Projeto Integrador ADS, Fatec Lins. Este repositório preserva 2026-1 e reúne as entregas de 2026-2. A aplicação atual é uma demonstração estática em HTML/CSS/JavaScript. Ela valida formulários e navega entre perguntas, sem gravar respostas ou integrar com Oracle.
 
-O repositório `pi-ads-2026-1-richard` preserva os trabalhos de 2026-1 e organiza os artefatos disponíveis para 2026-2 conforme o Guia de Padronização de Entregas no GitHub (PI II — ADS). A reorganização não representa aprovação acadêmica ou implementação das funcionalidades descritas.
+## Entregas de 13/11/2026
 
-## Documentação de 2026-2
-
-| Disciplina | Material disponível | Entregas pendentes |
+| Issue | Entrega | Estado desta versão |
 | --- | --- | --- |
-| [Engenharia de Software II](2026-2/engenharia-software/readme.md) | [Requisitos](2026-2/engenharia-software/requisitos.md), [nove diagramas de casos de uso](2026-2/engenharia-software/modelagem-uml/casos-de-uso.md) e [fluxos RF01–RF15](2026-2/engenharia-software/modelagem-uml/especificacao.md), extraídos de trabalho existente em 2026-1 | Revisão da cobertura dos casos de uso; diagramas de classes e sequência e respectiva especificação |
-| [Banco de Dados I](2026-2/banco-de-dados/readme.md) | Orientação da disciplina | Modelo conceitual, modelo lógico normalizado, `schema.sql`, `queries.sql` e testes |
-| [Desenvolvimento Web](2026-2/desenvolvimento-web/readme.md) | Pastas [wireframes](2026-2/desenvolvimento-web/wireframes/) e [src](2026-2/desenvolvimento-web/src/) preparadas | Sitemap, telas, HTML/CSS, JavaScript, acessibilidade e publicação |
-| [Compliance e Segurança da Informação](2026-2/seguranca/readme.md) | Orientação da disciplina; requisitos de segurança no documento de Engenharia | `analise-de-riscos.md`, `lgpd-e-anonimato.md`, política de retenção e aviso/termo de privacidade |
+| [#5 — Banco](https://github.com/Fatec-Extensao/pi-ads-2026-1-richard/issues/5) | [DDL](2026-2/banco-de-dados/schema.sql), [povoamento](2026-2/banco-de-dados/povoamento.sql), [cinco consultas](2026-2/banco-de-dados/queries.sql), [validação SQL](2026-2/banco-de-dados/validacao.sql) | Scripts preparados; lógica verificada em SQLite com adaptação explícita. Execução Oracle pendente. |
+| [#8 — Interatividade](https://github.com/Fatec-Extensao/pi-ads-2026-1-richard/issues/8) | [JavaScript](2026-2/desenvolvimento-web/src/app.js) e [descrição dos controles](2026-2/desenvolvimento-web/interatividade.md) | Validação de formulários e navegação implementadas e testadas em Chrome. |
+| [#11 — Privacidade](https://github.com/Fatec-Extensao/pi-ads-2026-1-richard/issues/11) | [Relatório LGPD e anonimato](2026-2/seguranca/lgpd-e-anonimato.md), [aviso ao respondente](2026-2/desenvolvimento-web/src/privacidade.html) | Documentos e controles de demonstração preparados. Requisitos de produção explicitados. |
+| [#9 — Publicação](https://github.com/Fatec-Extensao/pi-ads-2026-1-richard/issues/9) | [Workflow Pages](.github/workflows/pages.yml), [procedimento](2026-2/desenvolvimento-web/publicacao.md) | Pendente envio remoto, ativação do Pages e validação da URL. |
+| [#12 — Integração](https://github.com/Fatec-Extensao/pi-ads-2026-1-richard/issues/12) | [Validação final](2026-2/validacao-final.md), [slides HTML](2026-2/evidencias/apresentacao.html), [roteiro](2026-2/evidencias/roteiro-apresentacao.md) | Revisão local e mídia preparadas. Validação integral depende de Oracle, deploy e pendências acadêmicas anteriores. |
 
-Os arquivos README das pastas vazias indicam pendências; não constituem entregas acadêmicas.
+As issues remotas não foram encerradas nem alteradas nesta entrega. O status acima distingue artefatos locais e validação ainda necessária.
 
-## Trabalhos de 2026-1
+## Demonstração
+
+Abra [index.html](2026-2/desenvolvimento-web/src/index.html) no navegador. A aplicação usa apenas arquivos estáticos e não precisa de instalação. Selecione Responder à pesquisa de demonstração e digite **DEMO2026**. São três perguntas com Avançar/Voltar, obrigatórios e confirmação de leitura do aviso. Ao concluir, os campos são descartados. O botão Reiniciar demonstração remove o bloqueio de exemplo nesta aba.
+
+Use somente dados fictícios. O login e as demais funcionalidades administrativas são exemplos de interface. A garantia de uso único, a autenticação, a geração de códigos e a gravação das respostas dependem de backend.
+
+## Documentação por disciplina
+
+| Disciplina | Artefatos e pendências |
+| --- | --- |
+| [Engenharia de Software II](2026-2/engenharia-software/readme.md) | [Requisitos](2026-2/engenharia-software/requisitos.md), [casos de uso](2026-2/engenharia-software/modelagem-uml/casos-de-uso.md) e [especificação](2026-2/engenharia-software/modelagem-uml/especificacao.md). Há arquivos Astah na pasta. Conferir classes/sequência e suas exportações antes de concluir as issues anteriores. |
+| [Banco de Dados I](2026-2/banco-de-dados/readme.md) | Modelo original em bd o.txt e DDL extraído. Povoamento e consultas desta entrega. Executar em Oracle e confirmar diagramas/normalização das Issues #3 e #4. |
+| [Desenvolvimento Web](2026-2/desenvolvimento-web/readme.md) | HTML/CSS extraídos do ZIP, interatividade, aviso e apresentação. Conferir sitemap/wireframes anteriores e publicar. |
+| [Segurança](2026-2/seguranca/readme.md) | Relatório LGPD, política proposta de retenção/exclusão e aviso. Revisão de riscos da Issue #10 e conversão do PDF legado continuam pendentes. |
+
+## Trabalhos preservados de 2026-1
 
 - [Gerador de senhas — relatório](2026-1/algoritmos-e-logica-de-programacao/gerador-de-senhas.md), [código VisualG](2026-1/algoritmos-e-logica-de-programacao/gerador-de-senhas.alg) e [fluxograma](assets/imagens/fluxograma-gerador-de-senhas.png).
 - [Levantamento inicial de Engenharia de Software](2026-1/engenharia-de-software/levantamento-inicial.md).
-- [Trabalho P2 de Engenharia de Software completo](2026-1/engenharia-de-software/p2-engs.md).
+- [Trabalho P2 de Engenharia de Software](2026-1/engenharia-de-software/p2-engs.md).
 - [Front-end e back-end](2026-1/projeto-integrador/front-end-e-back-end.md).
 - [Análise de sistemas de questionários](2026-1/projeto-integrador/analise-de-sistemas-de-questionarios.md).
 
-Os nomes de autores e o conteúdo de cada trabalho foram preservados conforme seus documentos de origem. Os textos descrevem propostas e trabalhos acadêmicos, não comprovam que a aplicação esteja implementada.
+Os autores e o conteúdo desses documentos permanecem preservados. A lista de integrantes da apresentação final deve ser confirmada pelo grupo, pois os materiais anteriores têm registros diferentes.
 
-## Acompanhamento das entregas
+## Verificações reproduzíveis
 
-| Issue | Disciplina | Situação verificada |
-| --- | --- | --- |
-| [#1](../../issues/1) | Engenharia de Software | Material existente organizado; revisão da cobertura dos diagramas pendente |
-| [#2](../../issues/2) | Engenharia de Software | Classes e sequência pendentes; fluxos textuais de casos de uso não substituem esses diagramas |
-| [#3](../../issues/3) | Banco de Dados | DER pendente |
-| [#4](../../issues/4) | Banco de Dados | Modelo lógico, normalização, DDL e teste pendentes |
-| [#5](../../issues/5) | Banco de Dados | Povoamento e consultas pendentes |
-| [#6](../../issues/6) | Desenvolvimento Web | Sitemap e wireframes pendentes |
-| [#7](../../issues/7) | Desenvolvimento Web | HTML/CSS responsivo e acessibilidade pendentes |
-| [#8](../../issues/8) | Desenvolvimento Web | Interatividade e validação pendentes |
-| [#9](../../issues/9) | Desenvolvimento Web | Publicação e link funcional pendentes |
-| [#10](../../issues/10) | Segurança | Matriz de risco e medidas de mitigação pendentes |
-| [#11](../../issues/11) | Segurança | Relatório LGPD, retenção e aviso/termo pendentes |
-| [#12](../../issues/12) | PI II — integração das quatro disciplinas | Validação final e mídia de apresentação pendentes |
+Instruções em [tests/README.md](tests/README.md). As dependências são apenas para testes; não fazem parte do site. O relatório [validacao-final.md](2026-2/validacao-final.md) registra o que foi executado e os limites de cada teste.
 
-## Regras de organização
+## Organização
 
-- Relatórios, requisitos, atas e análises em Markdown (`.md`). Tabelas pequenas e médias em sintaxe Markdown.
-- Código e scripts SQL nas pastas correspondentes; imagens UML em `2026-2/engenharia-software/modelagem-uml/` e imagens compartilhadas em `assets/imagens/`.
-- Referências a arquivos por links relativos, sem anexos dispersos nas Issues. Nas Issues, usar `../blob/main/` antes do caminho do arquivo para o link resolver corretamente no GitHub.
-- Não adicionar `.docx`, `.xlsx`, `.pptx` ou relatórios `.pdf`. A exceção do guia para exports de gráficos/planilhas complexos não se aplica aos cinco trabalhos Word encontrados.
-- Não marcar atividades como concluídas sem o artefato e a verificação correspondente.
+Relatórios em Markdown, SQL na pasta Banco de Dados, código na pasta src e mídia HTML em evidencias. Nenhum novo Word, PowerPoint ou PDF integra esta entrega. Os arquivos legados permanecem preservados, incluindo um PDF que precisa de revisão/conversão para atender integralmente ao guia. Não marcar pendências como concluídas sem evidência.
 
-## Checklist da padronização
-
-- [x] Versões Markdown dos cinco trabalhos existentes preparadas, com tabelas e imagens preservadas.
-- [x] Cinco `.docx` retirados da árvore atual com autorização do responsável em 27/09/2026. Conteúdo preservado em Markdown, código e imagens; originais recuperáveis no histórico Git, sem reescrita do histórico.
-- [x] Imagens extraídas nas pastas apropriadas e referenciadas por links relativos.
-- [x] Labels de disciplina e tipo padronizadas conforme o guia.
-- [ ] Entregas acadêmicas pendentes produzidas e validadas.
-- [ ] Link funcional da aplicação publicada incluído no início deste README.
-
-Auditoria de organização: 27/09/2026. Arquivos de entrega inexistentes não foram criados como se estivessem concluídos.
+Auditoria anterior: 27/09/2026. Atualização desta entrega: 13/11/2026.
