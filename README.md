@@ -1,6 +1,6 @@
 # Sistema Web para Gestão de Pesquisas por Questionários
 
-**Publicação: preparada, ainda sem URL pública validada.** [Instruções de publicação](2026-2/desenvolvimento-web/publicacao.md) · [Abrir o protótipo](2026-2/desenvolvimento-web/src/index.html) · [Apresentação](2026-2/evidencias/apresentacao.html)
+**Aplicação publicada:** [Acessar o sistema](https://app-grupof.onrender.com) · [Abrir o protótipo](2026-2/desenvolvimento-web/src/index.html) · [Apresentação](2026-2/evidencias/apresentacao.html)
 
 Projeto Integrador ADS, Fatec Lins. Este repositório preserva 2026-1 e reúne as entregas de 2026-2. A aplicação atual é uma demonstração estática em HTML/CSS/JavaScript. Ela valida formulários e navega entre perguntas, sem gravar respostas ou integrar com Oracle.
 
