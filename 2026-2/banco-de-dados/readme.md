@@ -1,23 +1,30 @@
-# Banco de Dados I — Issue #5
+# Banco de Dados I — Modelagem lógica, DDL e consultas
 
-Professor: Prof. Luiz Fernando de Oliveira Silva.
+Professor: Prof. Luiz Fernando de Oliveira Silva. Projeto: Sistema Web para Gestão de Pesquisas por Questionários.
 
-O esquema Oracle foi extraído do arquivo existente [bd o.txt](bd%20o.txt), sem alterar suas 12 tabelas. Os IDs são explícitos e todos os registros são fictícios. Não usar o povoamento em produção.
+## Issue #4 — Modelo lógico e DDL
 
-## Execução
+- [Modelo lógico e dicionário das 12 tabelas](modelo-logico.md).
+- [Normalização até a 3FN](normalizacao-3fn.md).
+- [schema.sql](schema.sql): CREATE TABLE, PKs, UNIQUEs, CHECKs e 14 FKs em ALTER TABLE.
+- [testes-ddl.sql](testes-ddl.sql): inventário, 19 inserções válidas, dez casos inválidos esperados e rollback.
+- [Registro de validação e execução Oracle pendente](validacao-ddl.md).
 
-Em um esquema Oracle de testes vazio, abra os arquivos em SQL Developer e execute como script (F5), nesta ordem:
+O [modelo anterior](bd%20o.txt) permanece como origem histórica. A revisão conserva as 12 tabelas e as colunas. A PK de alternativa passa a ser (id_pergunta, id_alternativa), pois seu número é local à pergunta. A FK em resposta usa a mesma combinação. Há restrições de unicidade e domínio adicionais, documentadas no modelo lógico.
 
-1. [schema.sql](schema.sql): cria as tabelas; não remove estruturas existentes.
-2. [povoamento.sql](povoamento.sql): insere os dados uma única vez e confirma a transação.
-3. [validacao.sql](validacao.sql): confere contagens e inconsistências.
-4. [queries.sql](queries.sql): cinco consultas com JOIN e agregações.
+## Como executar
 
-O povoamento usa comandos de SQL*Plus/SQL Developer para interromper e desfazer a transação em caso de erro. Reexecuções falham por PK; use outro esquema vazio. Não há rotina de limpeza destrutiva automática.
+Use Oracle SQL Developer com conexão a um esquema de testes vazio. Abra schema.sql e execute como script (F5). Depois abra testes-ddl.sql e execute da mesma forma. A seção negativa do teste gera erros esperados, explicados no registro de validação. Esses erros não representam falha quando o código e o motivo coincidem com o esperado.
 
-## Dados e resultados esperados
+Não execute schema.sql sobre tabelas já existentes. Esta é a criação completa da estrutura revisada, não uma migração de uma base já criada. DDL no Oracle é confirmado automaticamente: uma falha posterior não desfaz tabelas já criadas. Use um esquema separado para os testes.
 
-| Tabela | Registros |
+## Issue #5 — Dados fictícios e relatórios
+
+Os arquivos de povoamento e consultas já existentes continuam válidos nesta estrutura. A compatibilidade foi verificada no adaptador de testes; ainda falta comprovar a execução Oracle.
+
+Depois do DDL, execute uma única vez [povoamento.sql](povoamento.sql), depois [validacao.sql](validacao.sql) e [queries.sql](queries.sql). O teste do DDL desfaz seus próprios dados e não substitui o povoamento.
+
+| Tabela | Registros do povoamento |
 | --- | ---: |
 | perfil | 3 |
 | usuario | 3 |
@@ -32,16 +39,10 @@ O povoamento usa comandos de SQL*Plus/SQL Developer para interromper e desfazer 
 | resposta | 21 |
 | auditoria | 2 |
 
-Q1: questionários 1, 2, 3 e 4 devem apresentar, respectivamente, senhas geradas 6/4/2/0, utilizadas 5/3/1/0, submissões 5/3/1/0 e participação 83,33%/75%/50%/0%.
+Na Q1, os questionários 1/2/3/4 apresentam participação de 83,33%/75%/50%/0%. Na Q3, médias 4/4/2/NULL. A Q5 mantém somente o questionário 1 com cinco avaliações e média 4. Os dados são fictícios; os relatórios detalhados não devem ser usados para divulgar respostas reais de grupos pequenos.
 
-Q2: alternativas do questionário 1 = 3/1/1; questionário 2 = 2/1/0; questionário 3 = 0/0/1. Q3: médias 4/4/2/NULL, com 5/3/1/0 avaliações. Q4: pesquisa 1 possui 3 respostas abertas, 8 de escala e 8 de múltipla escolha; pesquisa 2 possui 0/1/1. Q5: somente questionário 1, pergunta 2, com 5 avaliações e média 4.
+## Limites da estrutura
 
-As consultas Q1–Q4 são internas e de demonstração. Q5 mostra supressão de grupos pequenos, sem assegurar anonimização por si só. Não publicar textos livres ou cruzamentos identificáveis.
-
-## Limites do modelo existente
-
-As FKs não impedem duplicar uma resposta por submissão/pergunta, ligar alternativa à pergunta errada ou registrar tipos incompatíveis. O campo codigo não possui UNIQUE e armazena o código em claro. O backend futuro precisará aplicar constraints e transação atômica, proteger códigos e impedir correlação por timestamps. [Análise detalhada](../seguranca/lgpd-e-anonimato.md).
-
-Validação executada e limitações estão em [validacao-final.md](../validacao-final.md). Não foi executado Oracle neste ambiente.
+As constraints validam chaves, alternativas da pergunta correta, unicidade e domínios. A coerência entre questionário da submissão e pergunta, a correspondência de tipo, o preenchimento obrigatório e o consumo atômico de códigos ainda exigem regras adicionais no backend. Os códigos permanecem em claro no modelo acadêmico, e metadados podem permitir identificação indireta. [Relatório de privacidade](../seguranca/lgpd-e-anonimato.md).
 
 [Voltar ao projeto](../../README.md).

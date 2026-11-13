@@ -18,8 +18,9 @@ SELECT r.id_resposta FROM resposta r
 JOIN submissao s ON s.id_submissao = r.id_submissao
 JOIN pergunta p ON p.id_pergunta = r.id_pergunta
 LEFT JOIN alternativa a ON a.id_alternativa = r.id_alternativa
+                         AND a.id_pergunta = r.id_pergunta
 WHERE s.id_questionario <> p.id_questionario
-   OR (r.id_alternativa IS NOT NULL AND a.id_pergunta <> r.id_pergunta);
+   OR (r.id_alternativa IS NOT NULL AND a.id_alternativa IS NULL);
 
 SELECT id_submissao, id_pergunta FROM resposta
 GROUP BY id_submissao, id_pergunta HAVING COUNT(*) > 1;
