@@ -1,19 +1,11 @@
-# 🛡️ Compliance e Segurança da Informação
+# Compliance e Segurança da Informação
 
-Disciplina: Compliance e Segurança da Informação  
-Professor: Prof. Alciano Gustavo Genovez de Oliveira
+Professor: Prof. Alciano Gustavo Genovez de Oliveira.
 
-## Descrição da pasta
+- [Relatório LGPD, inventário, anonimato e retenção](lgpd-e-anonimato.md) — Issue #11.
+- [Aviso de privacidade exibido ao respondente](../desenvolvimento-web/src/privacidade.html).
+- [Validação geral e limitações](../validacao-final.md).
 
-Esta pasta contém os relatórios e análises focados na segurança da aplicação e na adequação às normas de privacidade de dados.
+A demonstração usa somente dados fictícios e não grava respostas. As rotinas de produção são propostas, não controles já operacionais. A análise de riscos completa da Issue #10 e a eventual conversão do PDF legado continuam fora desta entrega.
 
-## Conteúdos e caminhos
-
-- `analise-de-riscos.md`: levantamento de ameaças e vulnerabilidades com plano de mitigação.
-- `lgpd-e-anonimato.md`: documentação sobre o tratamento anônimo das respostas e conformidade com a LGPD.
-
-## Situação verificada em 27/09/2026
-
-Pendente: análise de riscos, classificação por probabilidade/impacto, medidas de mitigação, relatório LGPD, retenção/exclusão e aviso de privacidade/TCLE. Os [requisitos de segurança](../engenharia-software/requisitos.md) são material de referência, não evidência de controles implementados ou conformidade comprovada.
-
-[Voltar ao README principal](../../README.md).
+[Voltar ao projeto](../../README.md).
