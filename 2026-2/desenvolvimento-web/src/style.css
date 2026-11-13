@@ -1,0 +1,439 @@
+/* Aula 06 — Introdução ao CSS.
+   Folha externa compartilhada por todas as páginas do projeto.
+   As fontes Poppins e Open Sans são vinculadas no <head> dos HTMLs. */
+
+/* Variáveis: altere aqui as cores de todo o sistema.
+   Exemplos de hexadecimal, HSL, RGB e RGBA apresentados na aula. */
+:root {
+    --cor-primaria: #9d174d;
+    --cor-destaque: #ec4899;
+    --cor-escura: #0d1b2a;
+    --cor-texto: #1e293b;
+    --cor-secundaria: #526174;
+    --cor-fundo: #f8fafc;
+    --cor-suave: hsl(330, 70%, 97%);
+    --cor-borda: rgb(218, 225, 234);
+    --cor-superficie: white;
+}
+
+/* Seletor universal: inclui bordas e espaçamentos na largura dos elementos. */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+/* Elementos filhos herdam a fonte, a cor e a altura de linha do body. */
+body {
+    margin: 0;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    margin: 0 0 1rem;
+    color: var(--cor-escura);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+h1 {
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    font-size: 1.125rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--cor-primaria);
+    outline-offset: 4px;
+}
+
+/* Seletor de ID: apenas o cabeçalho principal recebe este fundo.
+   O header interno do artigo da página inicial mantém seu estilo normal. */
+#cabecalho-principal {
+    padding: 2.5rem max(1.25rem, calc((100% - 1120px) / 2)) 1.5rem;
+    border-top: 5px solid var(--cor-destaque);
+    background-color: var(--cor-escura);
+    color: white;
+}
+
+#cabecalho-principal h1 {
+    max-width: 960px;
+    color: inherit;
+}
+
+nav {
+    margin-top: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav a {
+    display: block;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    text-decoration: underline;
+}
+
+nav a[aria-current="page"], nav a[aria-current="location"] {
+    border-color: #f9a8d4;
+    background-color: var(--cor-suave);
+    color: var(--cor-primaria);
+}
+
+nav a:focus-visible {
+    outline-color: #f9a8d4;
+}
+
+main {
+    width: calc(100% - 2.5rem);
+    max-width: 1120px;
+    margin: 2.5rem auto;
+}
+
+main > article, main > section {
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    background-color: var(--cor-superficie);
+}
+
+article section {
+    margin-top: 1.75rem;
+}
+
+ul, ol {
+    padding-left: 1.5rem;
+}
+
+li + li {
+    margin-top: 0.5rem;
+}
+
+nav li + li, .lista-funcionalidades li + li {
+    margin-top: 0;
+}
+
+figure {
+    margin: 1.5rem 0 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+figcaption, small {
+    color: var(--cor-secundaria);
+    font-size: 0.875rem;
+}
+
+figcaption {
+    margin-top: 0.75rem;
+}
+
+#cabecalho-principal figcaption {
+    color: #cbd5e1;
+}
+
+aside {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid var(--cor-destaque);
+    border-radius: 0 8px 8px 0;
+    background-color: var(--cor-suave);
+}
+
+aside h2 {
+    color: var(--cor-primaria);
+    font-size: 1.125rem;
+}
+
+/* Classes reutilizáveis. Grid organiza os cartões do menu do sistema. */
+.lista-funcionalidades {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.5rem;
+    border: 1px solid var(--cor-borda);
+    border-top: 3px solid var(--cor-primaria);
+    border-radius: 8px;
+    background-color: var(--cor-superficie);
+}
+
+.card:hover {
+    border-color: var(--cor-primaria);
+}
+
+.card p {
+    font-size: 0.9375rem;
+}
+
+.card p:last-child {
+    margin-top: auto;
+    padding-top: 0.5rem;
+    font-weight: 700;
+}
+
+.pagina-login main {
+    max-width: 580px;
+}
+
+.pagina-funcionalidade main {
+    max-width: 900px;
+}
+
+/* Formulários: controles herdam a tipografia, com foco de teclado visível. */
+fieldset {
+    min-width: 0;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+}
+
+legend {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+}
+
+input, select, textarea, button {
+    font: inherit;
+}
+
+input, select, textarea {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #8996a7;
+    border-radius: 6px;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--cor-secundaria);
+    opacity: 1;
+}
+
+textarea {
+    display: block;
+    resize: vertical;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    width: 1.15rem;
+    min-height: 0;
+    height: 1.15rem;
+    margin: 0 0.5rem 0 0;
+    accent-color: var(--cor-primaria);
+    vertical-align: middle;
+}
+
+input[type="radio"] + label, input[type="checkbox"] + label {
+    margin: 0;
+    padding: 0.5rem 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+small {
+    display: inline-block;
+    margin-top: 0.35rem;
+}
+
+button {
+    min-height: 46px;
+    margin: 0.25rem 0.4rem 0.25rem 0;
+    padding: 0.7rem 1.25rem;
+    border: 1px solid var(--cor-primaria);
+    border-radius: 6px;
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #78123b;
+}
+
+/* A regra mais específica diferencia o botão de limpar pela cascata. */
+button[type="reset"] {
+    border-color: var(--cor-borda);
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--cor-fundo);
+}
+
+/* Tabelas: preserva cabeçalhos, legendas e relações entre linhas e colunas. */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-wrap: anywhere;
+}
+
+caption {
+    padding: 0 0 1rem;
+    color: var(--cor-secundaria);
+    text-align: left;
+    font-size: 0.9375rem;
+}
+
+th, td {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--cor-borda);
+    text-align: left;
+    vertical-align: top;
+}
+
+thead th {
+    background-color: var(--cor-primaria);
+    color: white;
+}
+
+tbody th {
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even), tfoot {
+    background-color: var(--cor-fundo);
+}
+
+tfoot {
+    color: var(--cor-secundaria);
+    font-size: 0.875rem;
+}
+
+.rodape {
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-secundaria);
+    font-size: 0.8125rem;
+    text-align: center;
+}
+
+/* Complemento responsivo: adapta espaçamentos e colunas em telas menores. */
+@media (max-width: 960px) {
+    .lista-funcionalidades {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #cabecalho-principal {
+        padding: 1.5rem 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    main {
+        width: calc(100% - 2rem);
+        margin: 1.5rem auto;
+    }
+
+    main > article, main > section, .card, fieldset, aside {
+        padding: 1rem;
+    }
+
+    .lista-funcionalidades {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        padding: 0.6rem 0.85rem;
+    }
+
+    th, td {
+        padding: 0.6rem 0.4rem;
+        font-size: 0.875rem;
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Fontes locais: nenhum contato com serviços de fontes. */
+body, h1, h2, h3 { font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }

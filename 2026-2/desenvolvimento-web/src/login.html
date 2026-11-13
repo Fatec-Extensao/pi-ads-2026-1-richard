@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tela de login do Sistema Web para Gestão de Pesquisas.">
+    <title>Sistema de Pesquisas — Login</title>
+    <link rel="stylesheet" href="style.css">
+<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="interatividade.css"><script src="app.js" defer></script></head>
+<body class="pagina-login"><a class="pular" href="#conteudo">Pular para o conteúdo</a><div class="demo-aviso">Demonstração acadêmica · Use dados fictícios · <a href="privacidade.html">Privacidade</a></div><noscript><p>Ative o JavaScript para validar os campos e navegar pelas perguntas. O envio está desabilitado.</p></noscript>
+    <header id="cabecalho-principal">
+        <h1>Login no Sistema</h1>
+        <nav aria-label="Navegação principal">
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="login.html" aria-current="page">Login</a></li>
+            <li><a href="main.html">Sistema</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main id="conteudo">
+        <section aria-labelledby="acesso">
+            <h2 id="acesso">Exemplo de formulário de login</h2><p>Não há autenticação nesta versão. Use admin@example.test e uma senha fictícia de pelo menos 8 caracteres. Não informe sua senha real.</p>
+            <p>Os campos marcados com * são obrigatórios.</p>
+
+            <form action="main.html" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Dados para login</legend>
+
+                    <p>
+                        <label for="email">
+                            E-mail <span aria-hidden="true">*</span>
+                        </label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email"
+                            aria-required="true"
+                            aria-describedby="email-ajuda"
+                            placeholder="seu@email.com">
+                        <br>
+                        <small id="email-ajuda">Digite o e-mail cadastrado no sistema.</small>
+                    </p>
+
+                    <p>
+                        <label for="senha">
+                            Senha <span aria-hidden="true">*</span>
+                        </label><br>
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            required
+                            minlength="8"
+                            maxlength="64"
+                            autocomplete="current-password"
+                            aria-required="true"
+                            aria-describedby="senha-ajuda"
+                            placeholder="Mínimo 8 caracteres">
+                        <br>
+                        <small id="senha-ajuda">A senha deve possuir no mínimo 8 caracteres.</small>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit" disabled>Entrar</button>
+                    <button type="reset">Limpar formulário</button>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Projeto Integrador — Sistema Web para Gestão de Pesquisas por Questionários.</p>
+    </footer>
+</body>
+</html>

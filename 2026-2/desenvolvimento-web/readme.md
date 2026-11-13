@@ -1,20 +1,13 @@
-# 🌐 Desenvolvimento Web
+# Desenvolvimento Web
 
-Disciplina: Desenvolvimento Web  
-Professor: Prof. Anderson Pazin
+Professor: Prof. Anderson Pazin.
 
-## Descrição da pasta
+- [Aplicação estática](src/index.html) e [descrição técnica](src/README.md).
+- [Validação e interatividade — Issue #8](interatividade.md).
+- [Publicação — Issue #9](publicacao.md).
+- [Aviso de privacidade](src/privacidade.html).
+- [Apresentação](src/apresentacao.html).
 
-Esta pasta contém todos os artefatos desenvolvidos para a interface Front-End do sistema de pesquisas por questionários.
+O protótipo vem do ZIP já presente no repositório. HTML/CSS foram extraídos para src, e o JavaScript de validação e navegação foi adicionado. O envio remoto e a validação da URL pública seguem pendentes. Os wireframes e sitemap da Issue #6 não são substituídos por esta entrega.
 
-## Conteúdos e caminhos
-
-- [src/](src/): código-fonte das páginas web (HTML5, CSS3, JavaScript).
-- [wireframes/](wireframes/): protótipos e esquemas de layout; previstos `sitemap.md` e `tela-home.png`.
-- Link do site/protótipo publicado e funcional no [README principal](../../README.md).
-
-## Situação verificada em 27/09/2026
-
-Pendente: sitemap, wireframes, implementação web e publicação. As pastas contêm somente README de organização; não comprovam implementação.
-
-[Voltar ao README principal](../../README.md).
+[Voltar ao projeto](../../README.md).

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>Responder questionário — demonstração</title>
+<link rel="stylesheet" href="../style.css"><link rel="stylesheet" href="../interatividade.css">
+<script src="../app.js" defer></script></head><body><a class="pular" href="#conteudo">Pular para o conteúdo</a><div class="demo-aviso">Demonstração acadêmica · Use dados fictícios · <a href="../privacidade.html">Privacidade</a></div><noscript><p>Ative o JavaScript para validar os campos e navegar pelas perguntas. O envio está desabilitado.</p></noscript><header id="cabecalho-principal"><h1>Sistema de Pesquisas</h1><nav aria-label="Principal"><ul><li><a href="../index.html">Início</a></li><li><a href="../main.html">Funcionalidades</a></li><li><a href="../funcionalidades/rf08-acessar-pesquisa.html">Responder pesquisa</a></li><li><a href="../privacidade.html">Privacidade</a></li></ul></nav></header>
+<main id="conteudo"><h2>Avaliação dos serviços acadêmicos</h2>
+<p>Exemplo de pesquisa para alunos. Campos com * são obrigatórios. Use apenas respostas fictícias.</p>
+<div class="privacidade-resumo"><p>Participação voluntária. Não pedimos nome, CPF, e-mail ou matrícula. Não escreva informações que identifiquem você ou outras pessoas. Nesta demonstração, nenhuma resposta é enviada ou salva.</p><p><a href="../privacidade.html">Ler o aviso de privacidade</a></p></div>
+<form action="#" method="post" id="questionario">
+<div data-wizard>
+<p class="progresso" data-progress aria-live="polite">Pergunta 1 de 3</p>
+<fieldset data-step><legend>1. Como você avalia o atendimento? *</legend>
+<p><input type="radio" id="atendimento-bom" name="atendimento" value="bom" required><label for="atendimento-bom">Bom</label></p>
+<p><input type="radio" id="atendimento-regular" name="atendimento" value="regular"><label for="atendimento-regular">Regular</label></p>
+<p><input type="radio" id="atendimento-ruim" name="atendimento" value="ruim"><label for="atendimento-ruim">Ruim</label></p></fieldset>
+<fieldset data-step><legend>2. Qual sua satisfação geral? *</legend>
+<label for="satisfacao">Escolha uma nota de 1 (muito insatisfeito) a 5 (muito satisfeito)</label>
+<select id="satisfacao" name="satisfacao" required><option value="">Selecione</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></fieldset>
+<fieldset data-step><legend>3. Gostaria de sugerir uma melhoria?</legend>
+<label for="sugestao">Sugestão (opcional, até 500 caracteres)</label>
+<textarea id="sugestao" name="sugestao" rows="4" maxlength="500" aria-describedby="sugestao-ajuda"></textarea>
+<p id="sugestao-ajuda">Não inclua nomes, contatos, números de documentos, turma específica ou informações sensíveis.</p>
+<p><input type="checkbox" id="ciencia" name="ciencia" required><label for="ciencia">Li o aviso de privacidade e desejo participar voluntariamente desta demonstração. *</label></p></fieldset>
+<div class="acoes"><button type="button" data-back disabled>Voltar</button><button type="button" data-next hidden>Avançar</button><button type="submit" data-submit disabled>Concluir demonstração</button></div>
+</div></form>
+<button type="button" data-restart>Reiniciar demonstração</button>
+<p>O bloqueio do código de exemplo vale só nesta aba. Uma aplicação real precisa validar prazo, questionário e uso único no servidor.</p>
+</main><footer class="rodape"><p>Projeto Integrador · Fatec Lins · 2026</p></footer></body></html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RF01 — Cadastrar pesquisa.">
+    <title>RF01 — Cadastrar pesquisa</title>
+    <link rel="stylesheet" href="../style.css">
+<meta name="referrer" content="no-referrer"><link rel="stylesheet" href="../interatividade.css"><script src="../app.js" defer></script></head>
+<body class="pagina-funcionalidade"><a class="pular" href="#conteudo">Pular para o conteúdo</a><div class="demo-aviso">Demonstração acadêmica · Use dados fictícios · <a href="../privacidade.html">Privacidade</a></div><noscript><p>Ative o JavaScript para validar os campos e navegar pelas perguntas. O envio está desabilitado.</p></noscript>
+    <header id="cabecalho-principal">
+        <h1>RF01 — Cadastrar pesquisa</h1>
+        <nav aria-label="Navegação principal">
+        <ul>
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="../login.html">Login</a></li>
+            <li><a href="../main.html" aria-current="location">Sistema</a></li>
+        </ul>
+    </nav>
+    </header>
+
+    <main id="conteudo">
+        <section aria-labelledby="descricao-funcionalidade">
+            <h2 id="descricao-funcionalidade">Descrição</h2>
+            <p>Cadastrar uma nova pesquisa com informações básicas como título, descrição e período.</p>
+        </section>
+
+        <section aria-labelledby="area-funcionalidade">
+            <h2 id="area-funcionalidade">Área da funcionalidade</h2>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Dados da pesquisa</legend>
+                    <p>
+                        <label for="titulo">Título da pesquisa *</label><br>
+                        <input type="text" id="titulo" name="titulo" required minlength="3" maxlength="100" aria-required="true">
+                    </p>
+                    <p>
+                        <label for="descricao">Descrição *</label><br>
+                        <textarea id="descricao" name="descricao" rows="5" cols="50" required maxlength="500" aria-required="true"></textarea>
+                    </p>
+                    <p>
+                        <label for="inicio">Data inicial *</label><br>
+                        <input type="date" id="inicio" name="inicio" required aria-required="true">
+                    </p>
+                    <p>
+                        <label for="fim">Data final *</label><br>
+                        <input type="date" id="fim" name="fim" required aria-required="true">
+                    </p>
+                </fieldset>
+                <button type="submit" disabled>Cadastrar pesquisa</button>
+            </form>
+        </section>
+
+        <aside aria-label="Observação sobre o protótipo">
+            <h2>Observação</h2>
+            <p>
+                Esta é uma demonstração de interface. Formulários são validados no navegador; cadastro, autenticação, exportação e gravação reais dependem do backend.
+            </p>
+        </aside>
+
+        <p><a href="../main.html">Voltar para todas as funcionalidades</a></p>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Projeto Integrador — Sistema Web para Gestão de Pesquisas por Questionários.</p>
+    </footer>
+</body>
+</html>
